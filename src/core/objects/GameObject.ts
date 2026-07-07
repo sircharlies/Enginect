@@ -1,6 +1,5 @@
 import Time from "../engine/Time";
 import Transform from "../math/Transform";
-import Vector2 from "../math/Vector2";
 
 export default abstract class GameObject {
 

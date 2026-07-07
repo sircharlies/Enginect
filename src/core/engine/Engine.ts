@@ -7,10 +7,10 @@ import type System from "../systems/System";
 import World from "../world/World";
 import RenderSystem from "../systems/RenderSystem";
 import PhysicsSystem from "../systems/PhysicsSystem";
+import CollisionSystem from "../systems/CollisionSystem";
 
 export default class Engine {
 
-    private readonly canvas: HTMLCanvasElement;
     private readonly renderer: Renderer;
     private readonly loop: Loop;
     private readonly config: EngineConfig;
@@ -19,7 +19,6 @@ export default class Engine {
     private readonly systems: System[] = [];
 
     constructor(canvas: HTMLCanvasElement, config = new EngineConfig()) {
-        this.canvas = canvas;
         this.config = config;
         canvas.width = config.width;
         canvas.height = config.height;
@@ -33,6 +32,7 @@ export default class Engine {
         this.world = new World();
         this.systems.push(
             new PhysicsSystem(),
+            new CollisionSystem(config.width, config.height),
             new RenderSystem(this.renderer)
         );
         this.loop = new Loop(this.update);
@@ -51,6 +51,13 @@ export default class Engine {
 
     private update = (time: Time): void => {
         if (!this.scene) return;
+
+        for (const object of this.world.getObjects()) {
+            if (object.active) {
+                object.update(time);
+            }
+        }
+
         this.renderer.clear(this.config.background);
         for (const system of this.systems) {
             system.update(

@@ -1,10 +1,12 @@
 import Circle from "../../../core/objects/renderables/shapes/Circle";
 
 export default class Ball extends Circle {
-    constructor() {
-        super("Ball", 50);
-        this.transform.position.set(400, 300);
+    constructor(x = 180, y = 100, velocityX = 260, velocityY = 90, radius = 24) {
+        super("Ball", radius);
+        this.transform.position.set(x, y);
         this.color = "#FFFFFF";
-        this.velocity.set(15, 0);
+        this.velocity.set(velocityX, velocityY);
+        this.useGravity = true;
+        this.mass = 1;
     }
 }

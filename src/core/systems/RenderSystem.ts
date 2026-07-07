@@ -13,7 +13,7 @@ export default class RenderSystem extends System {
         this.renderer = renderer;
     }
 
-    public update(world: World, time: Time): void {
+    public update(world: World, _time: Time): void {
         const objects = world.getObjects();
 
         for (const object of objects) {

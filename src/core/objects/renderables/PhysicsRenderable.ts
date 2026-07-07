@@ -14,7 +14,7 @@ export default abstract class PhysicsRenderable extends Renderable {
         this.acceleration = Vector2.zero();
     }
 
-    public update(time: Time): void {
+    public update(_time: Time): void {
     }
 
     public addForce(force: Vector2): void {
