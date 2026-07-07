@@ -1,4 +1,4 @@
-# SimCore Engine
+# Enginect Engine
 
 > A lightweight 2D simulation engine built with TypeScript.
 
@@ -6,7 +6,7 @@
 
 ## 📖 About
 
-SimCore is a personal project focused on learning and experimenting with:
+Enginect is a personal project focused on learning and experimenting with:
 
 - Engine Architecture
 - Physics Simulation
@@ -49,16 +49,16 @@ Instead of creating isolated simulations, the goal is to build a reusable 2D eng
 
 ### Physics
 
-- [ ] Gravity
-- [ ] Collision Detection
-- [ ] Collision Resolution
+- [x] Gravity
+- [x] Collision Detection
+- [x] Collision Resolution
 - [ ] Forces
 - [ ] Springs
 - [ ] Constraints
 
 ### Rendering
 
-- [ ] Shapes
+- [x] Shapes
 - [ ] Sprites
 - [ ] Images
 - [ ] Text
@@ -67,7 +67,7 @@ Instead of creating isolated simulations, the goal is to build a reusable 2D eng
 
 ### Simulations
 
-- [ ] Bouncing Balls
+- [x] Bouncing Balls
 - [ ] Particle System
 - [ ] Falling Sand
 - [ ] Fluid Simulation

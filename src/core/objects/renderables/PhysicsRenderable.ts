@@ -7,6 +7,11 @@ export default abstract class PhysicsRenderable extends Renderable {
     public acceleration: Vector2;
     public mass = 1;
     public useGravity = false;
+    public isStatic = false;
+    public collisionEnabled = true;
+    public restitution = 0.95;
+    public damping = 0.999;
+    public drag = 0;
 
     constructor(name: string) {
         super(name);
@@ -18,8 +23,7 @@ export default abstract class PhysicsRenderable extends Renderable {
     }
 
     public addForce(force: Vector2): void {
-        this.acceleration.add(
-            force.clone().divide(this.mass)
-        );
+        const inverseMass = this.mass > 0 ? 1 / this.mass : 0;
+        this.acceleration.add(force.clone().multiply(inverseMass));
     }
 }
