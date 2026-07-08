@@ -1,5 +1,5 @@
-import SimulationCanvas from "../core/components/SimulationCanvas";
-import BallScene from "../simulations/balls/BallScene";
+import SimulationCanvas from "../../core/components/SimulationCanvas";
+import BallScene from "../../simulations/balls/BallScene";
 
 export default function BallSimulationPage() {
     return (
